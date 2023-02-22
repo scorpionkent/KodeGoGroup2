@@ -1,26 +1,39 @@
-/* div.hero{
-  width: auto;
-  height: 225px;
-  max-height: 225px;
-} */
+.gallery{
+  max-height: auto;
+  height: fit-content;
+  padding-bottom: 25%;
+
+}
 .carousel-inner {
-    height: 91vh;
-  }
+    height: 100%;
   
+  }
+  .carousel-inner img{
+    margin: auto;
+  }
+ 
   .carousel-item {
-    /* position: absolute !important; Bootstrap is insistent */
+    position: absolute !important; /*Bootstrap is insistent*/
     top: 0;
     right: 0;
     bottom: 0;
     left: 0;
   }
   .carousel-item img {
-    height: 100%; /* Bootstrap handles width already */
-    object-fit: cover; /* or 'contain' if you want stretch instead of crop */
+    height: 768px; /* Bootstrap handles width already */
+    object-fit: cover; /*or 'contain' if you want stretch instead of crop */
   } 
-  
-div.Rooms{
-    background-color: aqua;
+.carousel-inner>.item>img, .carousel-inner>.item>a>img {
+    display: block;
+    height: auto;
+    max-width: 100%;
+    line-height: 1;
+    margin:auto;
+    width: 100%; 
+    }
+
+section#rooms.pt-md-5{
+    background-color: burlywood;
 }
 div.Comments{
     background-color: aquamarine;

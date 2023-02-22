@@ -22,9 +22,8 @@
     height: 100vh;
     /* background-color: red; */
     object-fit: cover;
-    background-image: url(../images/beach11.jpg);
+    /* background-image: url(../images/beach11.jpg); */
     background-size: cover;
-
     display: flex;
     justify-content: center;
     align-items: center;

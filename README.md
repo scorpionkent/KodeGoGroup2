@@ -1,1 +1,1 @@
-# KodeGoGroup2
+# MiniProject2

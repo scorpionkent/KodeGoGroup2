@@ -1,0 +1,31 @@
+/* div.hero{
+  width: auto;
+  height: 225px;
+  max-height: 225px;
+} */
+.carousel-inner {
+    height: 91vh;
+  }
+  
+  .carousel-item {
+    /* position: absolute !important; Bootstrap is insistent */
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
+  .carousel-item img {
+    height: 100%; /* Bootstrap handles width already */
+    object-fit: cover; /* or 'contain' if you want stretch instead of crop */
+  } 
+  
+div.Rooms{
+    background-color: aqua;
+}
+div.Comments{
+    background-color: aquamarine;
+}
+h3{
+    color: purple;
+    background-color: aqua;
+}

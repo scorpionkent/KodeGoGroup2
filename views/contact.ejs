@@ -1,0 +1,39 @@
+<%- include('./partials/header.ejs') %>
+<body>
+    <%- include('./partials/nav.ejs') %>
+    <div class="hero">
+        <!-- <div class="position-absolute top-50 start-50 translate-middle"> -->
+        <div class="container">
+            <h1 class="text-center text-wrap">Contact Us</h1>
+        </div>
+        <!-- </div> -->
+    </div>
+    <div class="form-container row">
+      <!-- <div class="form-div col-lg-6 col-sm-12"> -->
+        <div class="form-div">
+            <form class="border mt-2 p-2" action="https://formspree.io/f/mzbqbnke" method="POST">
+                <div class="mb-3">
+                    <label for="name" class="form-label">Full Name:</label>
+                    <input type="text" class="form-control" id="name" name="name" placeholder="Please Enter Full Name" required>
+                </div>
+                <!-- <div class="mb-3">
+                    <label for="companyName" class="form-label">Company Name:</label>
+                    <input type="text" class="form-control" id="companyName" name="companyName" placeholder="Please Enter Company Name" required>
+                </div> -->
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email address</label>
+                    <input type="email" class="form-control" id="email" name="email" placeholder="Please Enter Email" required>
+                    <div id="emailHelp " class="form-text ">We'll never share your email with anyone else.</div>
+                </div>
+                <div class="mb-3">
+                    <label for="message">Message:</label>
+                    <textarea name="message" id="message" cols="30" rows="10" class="form-control" placeholder="Please Enter Message" required></textarea>
+                </div>
+                <button type="submit " class="btn btn-primary ">Submit</button>
+            </form>
+      </div>
+      <!-- <div class="map-div mt-2 col-lg-6 col-sm-12">
+        <div class="mapouter"><div class="gmap_canvas"><iframe class="gmap_iframe" width="100%" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?width=600&amp;height=600&amp;hl=en&amp;q=panibuatan&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"></iframe><a href="https://pdflist.com/" alt="pdf download">Pdf download</a></div><style>.mapouter{position:relative;text-align:right;width:100%;height:600px;}.gmap_canvas {overflow:hidden;background:none!important;width:100%;height:600px;}.gmap_iframe {height:600px!important;}</style></div>
+      </div> -->
+    </div>
+    <%- include('./partials/footer.ejs') %>

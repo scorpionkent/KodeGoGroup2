@@ -1,0 +1,33 @@
+<form action="/room/addRoom" method="POST" class="border p-2">
+    <div class="form-group">
+        <label for="roomName">Room Name:</label>
+        <input type="text" class="form-control" id="roomName" name="roomName"  placeholder="Enter room name">
+    </div>
+    <div class="form-group">
+        <label for="roomPic">Room Picture:</label>
+        <input type="text" class="form-control" id="roomPic" name="roomPic"  placeholder="Enter Image Address">
+    </div>
+    <div class="form-group">
+        <label for="capacity">Capacity:</label>
+        <input type="number" class="form-control" id="capacity" name="capacity" placeholder="Enter room capacity">
+    </div>
+    <div class="form-group">
+        <label for="price">Price:</label>
+        <input type="number" class="form-control" id="price" name="price" placeholder="Enter room price">
+    </div>
+    <div class="form-group">
+        <label for="category">Category:</label>
+        <select class="w-100" id="category" name="category">
+            <option value="normal">normal</option>
+            <option value="deluxe">deluxe</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="available">Available:</label>
+        <select class="w-100" id="available" name="available">
+            <option value="true">true</option>
+            <option value="false">false</option>
+        </select>
+    </div>
+    <input type="submit" class="btn btn-primary mt-1" value="Submit">
+</form>

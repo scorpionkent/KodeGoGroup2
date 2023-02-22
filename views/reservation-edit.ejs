@@ -1,0 +1,40 @@
+<%- include('./partials/header.ejs') %>
+<body onload="myFunction('<%= rooms.roomName%>','<%= data.customerName%>','<%=data.checkInDate%>','<%=data.checkOutDate%>')">
+    <%- include('./partials/nav.ejs') %>
+    <div class="container">
+        <h1>Reservations Edit Page</h1>
+        <!-- <div class="d-flex flex-wrap gap-2">
+            <div class="card p-1"> -->
+                
+                <!-- <div class="card-body"> -->
+                    <%- include('./partials/form-reservation-edit.ejs')%>
+                <!-- </div> -->
+            <!-- </div>
+        </div> -->
+        <a href="/reservation" class="btn btn-dark mt-1">Back</a>
+    </div>
+    <script>
+        function myFunction(roomName, custName, cidate, codate) {
+            // alert('test');
+            // alert('test2');
+            document.getElementById('roomName').value = roomName;
+            document.getElementById('customerName').value = custName;
+
+            let d = new Date(cidate);
+            let ye = new Intl.DateTimeFormat('en', { year: 'numeric' }).format(d);
+            let mo = new Intl.DateTimeFormat('en', { month: '2-digit' }).format(d);
+            let da = new Intl.DateTimeFormat('en', { day: '2-digit' }).format(d);
+            let checkInDate = `${ye}-${mo}-${da}`;
+            // alert(checkInDate);
+            document.getElementById('checkInDate').value = checkInDate;
+
+            d = new Date(codate);
+            ye = new Intl.DateTimeFormat('en', { year: 'numeric' }).format(d);
+            mo = new Intl.DateTimeFormat('en', { month: '2-digit' }).format(d);
+            da = new Intl.DateTimeFormat('en', { day: '2-digit' }).format(d);
+            let checkOutDate = `${ye}-${mo}-${da}`;
+            // alert(checkOutDate);
+            document.getElementById('checkOutDate').value = checkOutDate;
+        }
+    </script>
+    <%- include('./partials/footer.ejs') %>

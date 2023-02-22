@@ -1,0 +1,47 @@
+<form action=<%="/reservation/updateReservation/" + data._id%> method="POST" class="border p-2">
+    <div class="form-group">
+        <label for="roomId">Room Id:</label>
+        <input type="text" class="form-control" readonly id="roomId" name="roomId" value=<%=data.roomId%>>
+    </div>
+    <div class="form-group">
+        <label for="roomName">Room Name:</label>
+        <input type="text" class="form-control" readonly id="roomName" name="roomName" value=<%=rooms.roomName%>>
+    </div>
+    <div class="form-group">
+        <label for="capacity">Capacity:</label>
+        <input type="text" class="form-control" readonly id="capacity" name="capacity" value=<%=rooms.capacity%>>
+    </div>
+    <div class="form-group">
+        <label for="price">Price:</label>
+        <input type="text" class="form-control" readonly id="price" name="price" value=<%=rooms.price%>>
+    </div>
+    <div class="form-group">
+        <label for="category">Category:</label>
+        <input type="text" class="form-control" readonly id="category" name="category" value=<%=rooms.category%>>
+    </div>
+    <div class="form-group">
+        <label for="available">Available:</label>
+        <input type="text" class="form-control" readonly id="available" name="available" value=<%=rooms.available%>>
+    </div>
+    <div class="form-group">
+        <label for="customerName">Customer Name:</label>
+        <input type="text" class="form-control" id="customerName" name="customerName" value=<%=data.customerName%>>
+    </div>
+    <div class="form-group">
+        <label for="customerEmail">Customer Email:</label>
+        <input type="email" class="form-control" id="customerEmail" name="customerEmail" value=<%=data.customerEmail%>>
+    </div>
+    <div class="form-group">
+        <label for="customerMobile">Customer Mobile:</label>
+        <input type="text" class="form-control" id="customerMobile" name="customerMobile" value=<%=data.customerMobile%>>
+    </div>
+    <div class="form-group">
+        <label for="checkInDate">Check-In Date:</label>
+        <input type="date" class="form-control" id="checkInDate" name="checkInDate" value=<%=data.checkInDate%>>
+    </div>
+    <div class="form-group">
+        <label for="checkOutDate">Check-Out Date:</label>
+        <input type="date" class="form-control" id="checkOutDate" name="checkOutDate" value=<%=data.checkOutDate%>>
+    </div>
+    <input type="submit" class="btn btn-primary mt-1" value="Submit">
+</form>

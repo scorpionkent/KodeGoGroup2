@@ -1,0 +1,44 @@
+<nav class="my-nav navbar navbar-expand-lg">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="/home"><img class="nav-icon" src="/images/resort-icon.jpg" alt="resort icon"><b>Panibuatan Beach Resort</b></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link" href="/home">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/contact">Contact</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/about">About</a>
+                </li>
+                <% if (isLogged==true) {%>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Admin
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="/register">User</a></li>
+                        <li><a class="dropdown-item" href="/room">Room</a></li>
+                        <!-- <li><hr class="dropdown-divider"></li> -->
+                        <li><a class="dropdown-item" href="/reservation">Booking</a></li>
+                    </ul>
+                    </li>
+                <%}%>
+                <!-- <li class="nav-item">
+                    <a class="nav-link disabled">Disabled</a>
+                </li> -->
+            </ul>
+        </div>
+        <% if (isLogged==true) {%>
+            <form id="logoutForm" action="/logout/" method="GET">
+                <button type="submit" class="btn btn-dark bg-gradient">
+                    Logout
+                </button>
+            </form>
+        <%}%>
+    </div>
+</nav>

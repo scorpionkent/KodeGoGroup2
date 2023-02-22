@@ -1,0 +1,77 @@
+<%- include('./partials/header.ejs') %>
+<body>
+    <%- include('./partials/nav.ejs') %>
+    <div class="container">
+        <h1>Rooms Page</h1>
+        <div class="container">
+            <form action="/room" method="GET" class="mt-1 mb-1">
+                <input class="form-control me-2" type="text" id="search" name="search" placeholder="Search room name or category" aria-label="Search" value="<%= search != '' ? search: '' %>">
+                <div class="pt-3 me-2">
+                    <label for="limit">Number of items per page:</label>
+                    <select name="limit" id="limit">
+                        <option value="5" <%= limit == 5 ? 'selected' : '' %>>5</option>
+                        <option value="10" <%= limit == 10 ? 'selected' : '' %>>10</option>
+                        <option value="20" <%= limit == 20 ? 'selected' : '' %>>20</option>
+                        <option value="30" <%= limit == 30 ? 'selected' : '' %>>30</option>
+                    </select>
+                </div>
+                <button class="btn btn-outline-success" type="submit">Search</button>
+            </form>
+            <p>Total items: <%=total%></p>
+            <form action="room/add" method="GET">
+                <input type="submit" class="btn btn-primary" value="Add Room">
+            </form>
+            <div class="d-flex flex-wrap gap-2">
+                <%for(let items of data){%>
+                <div class="card p-1" style="width: 13rem;">
+                    <img class="cards-rooms card-img-top" src=<%=items.roomPic%>>
+                    <div class="card-body">
+                        <h5 class="card-title"><%=items.roomName%></h5>
+                        <p class="card-text"><%=items.capacity%></p>
+                        <p class="card-text"><%=items.price%></p>
+                    </div>
+                    <a href=<%="room/view/" + items._id %> class="btn btn-primary mt-1">View</a>
+                    <a href=<%="room/edit/" + items._id %> class="btn btn-secondary mt-1">Edit</a>
+                    <a href="#" class="btn btn-danger mt-1" data-bs-toggle="modal" data-bs-target=<%="#deletemodal" + items._id%> >Delete</a>
+                </div>
+                <div class="modal fade" id=<%="deletemodal" + items._id%> data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="deletemodalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="deletemodalLabel">Delete</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <p>Are you sure you want to delete ID:
+                                    <%= items._id%>?</p>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                                <form action=<%="room/delete/" + items._id %> method="GET">
+                                    <input type="submit" class="btn btn-danger" value="Delete">
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <%}%>
+            </div>
+            <!-- pagination -->
+            <div class="d-flex justify-content-center mt-2">
+                <% if (total > limit) { %>
+                <nav aria-label="Page navigation">
+                    <ul class="pagination">
+                        <% for (let i = 1; i <= Math.ceil(total / limit); i++) { %>
+                        <li class="page-item <%= i === page ? 'active' : '' %>">
+                            <a class="page-link" href="?search=<%= search %>&page=<%= i %>&limit=<%= limit %>">
+                                <%= i %>
+                            </a>
+                        </li>
+                        <% } %>
+                    </ul>
+                </nav>
+                <% } %>                 
+            </div>
+        </div>
+    </div>
+    <%- include('./partials/footer.ejs') %>
